@@ -24,10 +24,10 @@
                 requestURL = "https://s3-us-west-2.amazonaws.com/css490/input.txt";
                 // TODO: 
                 // - Get data from https://s3-us-west-2.amazonaws.com/css490/input.txt
-                // - Upload text to S3 bucket "Program4"
+                // - Upload text to S3 bucket "css436program4storage"
                 // - Parse into objects and upload each object key-value pair in Dyanmo DB table
                 var request = new XMLHttpRequest();
-                request.open("GET", requestURL, false);
+                await request.open("GET", requestURL);
                 document.getElementById("userfeedback").innerHTML = request.responseText;
             }
 
