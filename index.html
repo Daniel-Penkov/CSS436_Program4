@@ -21,14 +21,24 @@
         <script language="Javascript">
             function loadButtonClicked() {
                 document.getElementById("userfeedback").innerHTML = "Loading data into Bucket and NoSQL Storage";
+                // TODO: 
+                // - Get data from https://s3-us-west-2.amazonaws.com/css490/input.txt
+                // - Upload text to S3 bucket "Program4"
+                // - Parse into objects and upload each object key-value pair in Dyanmo DB table
             }
 
             function clearButtonClicked() {
                 document.getElementById("userfeedback").innerHTML = "Deleting all data from Bucket and NoSQL Storage";
+                // TODO:
+                // - Delete all objects in S3 bucket "Program4"
+                // - Delete all table rows in Dyanmo DB table
             }
 
             function queryButtonClicked() {
                 document.getElementById("userfeedback").innerHTML = "Query Results:";
+                // TODO:
+                // - Use Query Library to query Dyanmo DB table using first and last name data input
+                // - Print out all matches or "No Matches in Dyanmo Table"
             }
         </script>
     </body>
