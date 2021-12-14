@@ -2,29 +2,33 @@
 <html>
     <body class="body">
         <link rel="style" href="styling.css">
-        <h1>Daniel's Program 4</h1>
+        <h1>Daniel's Cloud Computing Program 4</h1>
 
-        <button onclick="loadButtonClicked()" class="button">Load Data</button>
-        <button onclick="clearButtonClicked()" class="button">Clear Data</button>
-        <form name="inputForm">
-            First Name:
-            <input name="firstName" type="text" value=""/>
-            Last Name:
-            <input name="lastName" type="text" value=""/>
-        </form>
-        <button onclick="queryButtonClicked()" class="button">Query Data</button>
+        <div class="main">
+            <button onclick="loadButtonClicked()" class="button">Load Data</button>
+            <button onclick="clearButtonClicked()" class="button">Clear Data</button>
+            <form name="inputForm">
+                First Name:
+                <input name="firstName" type="text" value=""/>
+                Last Name:
+                <input name="lastName" type="text" value=""/>
+            </form>
+            <button onclick="queryButtonClicked()" class="button">Query Data</button>
+    
+            <p id="userfeedback"></p>
+        </div>
         
         <script language="Javascript">
             function loadButtonClicked() {
-                
+                document.getElementById("userfeedback").innerHTML = "Loading data into Bucket and NoSQL Storage";
             }
 
             function clearButtonClicked() {
-                
+                document.getElementById("userfeedback").innerHTML = "Deleting all data from Bucket and NoSQL Storage";
             }
 
             function queryButtonClicked() {
-                
+                document.getElementById("userfeedback").innerHTML = "Query Results:";
             }
         </script>
     </body>
