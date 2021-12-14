@@ -30,7 +30,7 @@
                 request.open("GET", requestURL, true);
                 request.send();
                 request.onreadystatechange = function () {
-                    if (xmlHttp.readyState == 4 && xmlHttp.status == 200) {
+                    if (request.readyState == 4 && request.status == 200) {
                         document.getElementById("userfeedback").innerHTML = JSON.parse(request.responseText);
                     }
                 }
