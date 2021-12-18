@@ -28,7 +28,7 @@
 
 
                 var request = new XMLHttpRequest();
-                request.open("POST", bucketLoadURL, true);
+                request.open("GET", bucketLoadURL, true);
                 request.send();
                 request.onreadystatechange = function () {
                     if (request.readyState == 4 && request.status == 200) {
