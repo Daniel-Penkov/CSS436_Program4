@@ -20,20 +20,19 @@
         
         <script language="Javascript">
             function loadButtonClicked() {
-                //document.getElementById("userfeedback").innerHTML = "Loading data into Bucket and NoSQL Storage";
-                requestURL = "https://s3-us-west-2.amazonaws.com/css490/input.txt";
-                // TODO: 
-                // - Get data from https://s3-us-west-2.amazonaws.com/css490/input.txt
-                // - Upload text to S3 bucket "css436program4storage"
-                // - Parse into objects and upload each object key-value pair in Dyanmo DB table
+                document.getElementById("userfeedback").innerHTML = "Loading data into Bucket and NoSQL Storage";
+                bucketLoadURL = "arn:aws:execute-api:us-east-1:909176613742:htry3uqdfb/*/POST/loadbucket";
+                tableLoadURL = "arn:aws:execute-api:us-east-1:909176613742:htry3uqdfb/*/POST/loadtable";
+
                 var request = new XMLHttpRequest();
-                request.open("GET", requestURL, true);
+                request.open("POST", bucketLoadURL, true);
                 request.send();
                 request.onreadystatechange = function () {
                     if (request.readyState == 4 && request.status == 200) {
-                        document.getElementById("userfeedback").innerHTML = request.response;
+                        //document.getElementById("userfeedback").innerHTML = request.response;
                     }
                 }
+                
             }
 
             function clearButtonClicked() {
