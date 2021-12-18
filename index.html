@@ -32,7 +32,7 @@
                 request.send();
                 request.onreadystatechange = function () {
                     if (request.readyState == 4 && request.status == 200) {
-                        //document.getElementById("userfeedback").innerHTML = request.response;
+                        document.getElementById("userfeedback").innerHTML = request.response;
                     }
                 }
                 
