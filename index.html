@@ -21,8 +21,11 @@
         <script language="Javascript">
             function loadButtonClicked() {
                 document.getElementById("userfeedback").innerHTML = "Loading data into Bucket and NoSQL Storage";
-                bucketLoadURL = "arn:aws:execute-api:us-east-1:909176613742:htry3uqdfb/*/POST/loadbucket";
+                //bucketLoadURL = "arn:aws:execute-api:us-east-1:909176613742:htry3uqdfb/*/POST/loadbucket";
+                bucketLoadURL = "https://htry3uqdfb.execute-api.us-east-1.amazonaws.com/prod";
                 tableLoadURL = "arn:aws:execute-api:us-east-1:909176613742:htry3uqdfb/*/POST/loadtable";
+                
+
 
                 var request = new XMLHttpRequest();
                 request.open("POST", bucketLoadURL, true);
