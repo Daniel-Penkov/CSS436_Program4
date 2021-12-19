@@ -56,9 +56,6 @@
             }
 
             function queryButtonClicked() {
-                // TODO:
-                // - Use Query Library to query Dyanmo DB table using first and last name data input
-                // - Print out all matches or "No Matches in Dyanmo Table"
                 var firstNameInput = document.forms["inputForm"]["firstName"].value.trim();
                 var lastNameInput = document.forms["inputForm"]["lastName"].value.trim();
 
@@ -67,11 +64,7 @@
                     alert("Querying the database requires at least 1 input value");
                     return;
                 }
-
-                // const requestBody = {
-                //     firstname: firstNameInput,
-                //     lastname: lastNameInput
-                // };
+                
                 queryTableURL = "https://htry3uqdfb.execute-api.us-east-1.amazonaws.com/prod/querytable";
                 var request = new XMLHttpRequest();
                 request.open("PUT", queryTableURL, true);
