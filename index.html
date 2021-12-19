@@ -25,12 +25,10 @@
                 bucketLoadURL = "https://htry3uqdfb.execute-api.us-east-1.amazonaws.com/prod/loadbucket";
                 tableLoadURL = "arn:aws:execute-api:us-east-1:909176613742:htry3uqdfb/*/POST/loadtable";
                 
-
-
                 var request = new XMLHttpRequest();
                 request.open("POST", bucketLoadURL, true);
                 request.send();
-                print(request.status())
+                print(request.status)
                 request.onreadystatechange = function () {
                     if (request.readyState == 4 && request.status == 200) {
                         document.getElementById("userfeedback").innerHTML = request.response;
@@ -41,9 +39,7 @@
 
             function clearButtonClicked() {
                 document.getElementById("userfeedback").innerHTML = "Deleting all data from Bucket and NoSQL Storage";
-                // TODO:
-                // - Delete all objects in S3 bucket "Program4"
-                // - Delete all table rows in Dyanmo DB table
+                emptyStorageURL = "arn:aws:execute-api:us-east-1:909176613742:htry3uqdfb/*/POST/loadbucket";
             }
 
             function queryButtonClicked() {
