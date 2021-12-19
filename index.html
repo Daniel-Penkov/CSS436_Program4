@@ -16,6 +16,7 @@
             <button onclick="queryButtonClicked()" class="button">Query Data</button>
     
             <p id="userfeedback"></p>
+            <p id="queryresults"></p>
         </div>
         
         <script language="Javascript">
@@ -55,10 +56,31 @@
             }
 
             function queryButtonClicked() {
-                document.getElementById("userfeedback").innerHTML = "Query Results:";
                 // TODO:
                 // - Use Query Library to query Dyanmo DB table using first and last name data input
                 // - Print out all matches or "No Matches in Dyanmo Table"
+                var firstNameInput = document.forms["inputForm"]["firstName"].value.trim();
+                var lastNameInput = document.forms["inputForm"]["lastName"].value.trim();
+
+                document.getElementById("userfeedback").innerHTML = "Querying....First Name: " + firstNameInput + " Last Name: " + lastNameInput;
+                if (firstNameInput == "" && lastNameInput == "") {
+                    alert("Querying the database requires at least 1 input value");
+                    return;
+                }
+
+                const requestBody = {
+                    firstname: firstNameInput,
+                    lastname: lastNameInput
+                };
+                queryTableURL = "https://htry3uqdfb.execute-api.us-east-1.amazonaws.com/prod/querytable";
+                var request = new XMLHttpRequest();
+                request.open("GET", queryTableURL, true)
+                request.send(JSON.stringify({"firstname": firstNameInput, "lastname": lastNameInput}))
+                request.onreadystatechange = function () {
+                if (request.readyState == 4 && request.status == 200) {
+                        document.getElementById("queryresults").innerHTML = request.responseText;
+                    }
+                };
             }
         </script>
     </body>
