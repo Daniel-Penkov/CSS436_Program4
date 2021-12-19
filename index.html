@@ -21,9 +21,7 @@
         <script language="Javascript">
             function loadButtonClicked() {
                 document.getElementById("userfeedback").innerHTML = "Loading data into Bucket and NoSQL Storage";
-                //bucketLoadURL = "arn:aws:execute-api:us-east-1:909176613742:htry3uqdfb/*/POST/loadbucket";
                 bucketLoadURL = "https://htry3uqdfb.execute-api.us-east-1.amazonaws.com/prod/loadbucket";
-                //tableLoadURL = "arn:aws:execute-api:us-east-1:909176613742:htry3uqdfb/*/POST/loadtable";
                 tableLoadURL = "https://htry3uqdfb.execute-api.us-east-1.amazonaws.com/prod/loadtable";
                 
                 var request = new XMLHttpRequest();
@@ -41,13 +39,19 @@
                         };
                     }
                 };
-
-                
             }
 
             function clearButtonClicked() {
                 document.getElementById("userfeedback").innerHTML = "Deleting all data from Bucket and NoSQL Storage";
-                emptyStorageURL = "arn:aws:execute-api:us-east-1:909176613742:htry3uqdfb/*/POST/loadbucket";
+                clearStorageURL = "https://htry3uqdfb.execute-api.us-east-1.amazonaws.com/prod/emptyallstorage";
+                var request = new XMLHttpRequest();
+                request.open("DELETE", clearStorageURL, true);
+                request.send();
+                request.onreadystatechange = function () {
+                    if (request.readyState == 4 && request.status == 200) {
+                        document.getElementById("userfeedback").innerHTML = request.response;
+                    }
+                };
             }
 
             function queryButtonClicked() {
