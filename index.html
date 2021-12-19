@@ -9,9 +9,9 @@
             <button onclick="clearButtonClicked()" class="button">Clear Data</button>
             <form name="inputForm">
                 First Name:
-                <input name="firstName" type="text" value=""/>
+                <input type="text" name="firstName" value=""/>
                 Last Name:
-                <input name="lastName" type="text" value=""/>
+                <input type="text" name="lastName" value=""/>
             </form>
             <button onclick="queryButtonClicked()" class="button">Query Data</button>
     
@@ -68,14 +68,14 @@
                     return;
                 }
 
-                const requestBody = {
-                    firstname: firstNameInput,
-                    lastname: lastNameInput
-                };
+                // const requestBody = {
+                //     firstname: firstNameInput,
+                //     lastname: lastNameInput
+                // };
                 queryTableURL = "https://htry3uqdfb.execute-api.us-east-1.amazonaws.com/prod/querytable";
                 var request = new XMLHttpRequest();
-                request.open("GET", queryTableURL, true)
-                request.send(JSON.stringify(requestBody))
+                request.open("PUT", queryTableURL, true);
+                request.send(JSON.stringify({"firstname": firstNameInput, "lastname": lastNameInput}));
                 request.onreadystatechange = function () {
                 if (request.readyState == 4 && request.status == 200) {
                         document.getElementById("queryresults").innerHTML = request.responseText;
