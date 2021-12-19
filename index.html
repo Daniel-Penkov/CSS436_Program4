@@ -62,7 +62,7 @@
                 var firstNameInput = document.forms["inputForm"]["firstName"].value.trim();
                 var lastNameInput = document.forms["inputForm"]["lastName"].value.trim();
 
-                document.getElementById("userfeedback").innerHTML = "Querying....First Name: " + firstNameInput + " Last Name: " + lastNameInput;
+                document.getElementById("userfeedback").innerHTML = "Querying......";
                 if (firstNameInput == "" && lastNameInput == "") {
                     alert("Querying the database requires at least 1 input value");
                     return;
@@ -75,7 +75,7 @@
                 queryTableURL = "https://htry3uqdfb.execute-api.us-east-1.amazonaws.com/prod/querytable";
                 var request = new XMLHttpRequest();
                 request.open("GET", queryTableURL, true)
-                request.send(JSON.stringify({"firstname": firstNameInput, "lastname": lastNameInput}))
+                request.send(JSON.stringify(requestBody))
                 request.onreadystatechange = function () {
                 if (request.readyState == 4 && request.status == 200) {
                         document.getElementById("queryresults").innerHTML = request.responseText;
