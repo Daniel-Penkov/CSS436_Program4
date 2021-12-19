@@ -27,3 +27,10 @@ h1{
     padding: 40px;
     font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
 }
+
+#main {
+    padding-bottom: 300px;
+    margin:0 auto;
+    position: relative;
+    width: 960px;
+    } 
