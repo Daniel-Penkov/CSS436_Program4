@@ -33,7 +33,7 @@
                         document.getElementById("queryresults").innerHTML = "";
                         const responseJSON = request.responseText;
                         const response = JSON.parse(responseJSON);
-                        document.getElementById("userfeedback").innerHTML = request.body;
+                        document.getElementById("userfeedback").innerHTML = request.responseText;
                         request.open("POST", tableLoadURL, true);
                         request.send();
                         request.onreadystatechange = function () {
@@ -41,7 +41,7 @@
                                 document.getElementById("queryresults").innerHTML = "";
                                 const responseJSON = request.responseText;
                                 const response = JSON.parse(responseJSON);
-                                document.getElementById("userfeedback").innerHTML = request.body;
+                                document.getElementById("userfeedback").innerHTML = request.responseText;
                             }   
                         };
                     }
@@ -60,7 +60,7 @@
                         document.getElementById("queryresults").innerHTML = "";
                         const responseJSON = request.responseText;
                         const response = JSON.parse(responseJSON);
-                        document.getElementById("userfeedback").innerHTML = request.body;
+                        document.getElementById("userfeedback").innerHTML = request.responseText;
                     }
                 };
                 request.onerror = function () {
@@ -89,7 +89,7 @@
                         document.getElementById("userfeedback").innerHTML = "Query Matches:";
                         const responseJSON = request.responseText;
                         const response = JSON.parse(responseJSON);
-                        document.getElementById("queryresults").innerHTML = request.body;
+                        document.getElementById("queryresults").innerHTML = request.responseText;
                     }
                 };
             }
