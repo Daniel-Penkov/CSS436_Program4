@@ -30,7 +30,10 @@
                 request.send();
                 request.onreadystatechange = function () {
                     if (request.readyState == 4 && request.status == 200) {
-                        document.getElementById("userfeedback").innerHTML = JSON.parse(request.responseText, "body");
+                        document.getElementById("userfeedback").innerHTML = request.responseText;
+                        const responseJSON = request.responseText;
+                        const response = JSON.parse(responseJSON);
+                        console.log(response);
                         request.open("POST", tableLoadURL, true);
                         request.send();
                         request.onreadystatechange = function () {
