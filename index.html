@@ -35,6 +35,7 @@
                         request.onreadystatechange = function () {
                             if (request.readyState == 4 && request.status == 200) {
                                 document.getElementById("userfeedback").innerHTML = request.responseText;
+                                document.getElementById("queryresults").innerHTML = "";
                             }   
                         };
                     }
@@ -50,11 +51,13 @@
                 request.onreadystatechange = function () {
                     if (request.readyState == 4 && request.status == 200) {
                         document.getElementById("userfeedback").innerHTML = request.responseText;
+                        document.getElementById("queryresults").innerHTML = "";
                     }
                 };
             }
 
             function queryButtonClicked() {
+                document.getElementById("queryresults").innerHTML = "";
                 var firstNameInput = document.forms["inputForm"]["firstName"].value.trim();
                 var lastNameInput = document.forms["inputForm"]["lastName"].value.trim();
 
