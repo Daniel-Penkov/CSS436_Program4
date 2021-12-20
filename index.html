@@ -1,19 +1,18 @@
 <!DOCTYPE html>
 <html>
-    <body style="justify-content: center;align-items: center;margin: auto;">
-        <!-- <link rel="style" href="styling.css"> -->
+    <body style="text-align: center">
         <h1>Daniel's Cloud Computing Program 4</h1>
 
-        <div class="main">
-            <button onclick="loadButtonClicked()" class="button">Load Data</button>
-            <button onclick="clearButtonClicked()" class="button">Clear Data</button>
+        <div>
+            <button onclick="loadButtonClicked()">Load Data</button>
+            <button onclick="clearButtonClicked()">Clear Data</button>
             <form name="inputForm">
                 First Name:
                 <input type="text" name="firstName" value=""/>
                 Last Name:
                 <input type="text" name="lastName" value=""/>
             </form>
-            <button onclick="queryButtonClicked()" class="button">Query Data</button>
+            <button onclick="queryButtonClicked()">Query Data</button>
     
             <p id="userfeedback"></p>
             <p id="queryresults"></p>
