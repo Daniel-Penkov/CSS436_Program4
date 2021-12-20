@@ -33,7 +33,7 @@
                         document.getElementById("userfeedback").innerHTML = request.responseText;
                         const responseJSON = request.responseText;
                         const response = JSON.parse(responseJSON);
-                        console.log(response);
+                        console.log(response.body);
                         request.open("POST", tableLoadURL, true);
                         request.send();
                         request.onreadystatechange = function () {
